@@ -1,3 +1,3 @@
 package domain
 
-case class Wallet(money: BigDecimal, cards: List[Card], documents: List[Document])
+case class Wallet(id: Long, money: BigDecimal, cards: List[Card], documents: List[Document])

@@ -23,7 +23,7 @@ class WalletMediator(itau: ActorRef, cielo: ActorRef, dropbox: ActorRef) extends
         money <- moneyPromise.mapTo[BigDecimal]
         cards <- cardsPromise.mapTo[List[Card]]
         documents <- documentsPromise.mapTo[List[Document]]
-      } yield Wallet(money, cards, documents)
+      } yield Wallet(id, money, cards, documents)
 
       val client = sender
       wallet map (client ! _)
